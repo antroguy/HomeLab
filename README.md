@@ -17,7 +17,8 @@ a.	“docker run –rm guacamole/guacamole /opt/guacamole/bin/initdb.sh   --mysq
 12.	If you type “show databases”, you should see guacamole_db
 13.	mysql -u root -p -h 172.17.0.2 guacamole_db < initdb.sql
 14.	log back into sql server and type in “use guacamole_db” to access the database.
-15.	Create a user for the guacamole server “create user ‘guacadmin’@’localhost’ identified by ‘password’;
-16.	Grant all privileges on guacamole_db to ‘guacadmin’@’localhost’;
+15.	Create a user for the guacamole server “create user ‘guacadmin’@’%’ identified by ‘password’;
+a.	If I used localhost instead of ‘%’ it didn’t work
+16.	“Grant all privileges on guacamole_db.* to ‘guacadmin’@’localhost’;”
 17.	Type in “select host, user from mysql.user;” to verify the user guacadmin as been created.
 18.	Type in “show grants for ‘guacadmin’@’localhost’; “ to verify all privileges for guaccadmin_db have been granted to the guacadmin user
