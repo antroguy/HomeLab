@@ -1,5 +1,7 @@
 
-Home Lab Setup Setting up a Guacamole server: Requirements: Ubuntu 18.04 most recent version or sooner. Really doesn’t matter since we are using dockers.
+**Home Lab - Setting up Guacamole Server with Nginx Reverse Proxy for SSL encryption.**
+
+**Requirements:** Ubuntu 18.04 most recent version or sooner. Really doesn’t matter since we are using dockers.
 
 Install docker with command “sudo apt install docker.io”
 
