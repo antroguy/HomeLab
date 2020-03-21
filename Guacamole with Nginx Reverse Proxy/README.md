@@ -10,8 +10,10 @@ This guide will provide instrucction on how to deploy a guacamole server and mys
 * Ownership of a domain (I purchased my domain through google domains)
 
 1. On your Ubuntu server install the docker application.
-''' “sudo apt install docker.io”
-
+'''python
+s = “sudo apt install docker.io”
+print s
+'''
 pull guacamole guacd docker with “sudo docker pull guacamole/guacd”
 
 pull guacamole docker with “sudo docker pull guacamole/guacamole”
