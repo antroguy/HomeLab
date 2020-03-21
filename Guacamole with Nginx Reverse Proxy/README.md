@@ -2,9 +2,13 @@
 Home Lab Setup Setting up a Guacamole server: Requirements: Ubuntu 18.04 most recent version or sooner. Really doesn’t matter since we are using dockers.
 
 Install docker with command “sudo apt install docker.io”
+
 pull guacamole guacd docker with “sudo docker pull guacamole/guacd”
+
 pull guacamole docker with “sudo docker pull guacamole/guacamole”
+
 grab mysql database structure with a. “docker run –rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --mysql > initdb.sql
+
 Set up guacamole guacd with “sudo docker run -d –name guacdDocker guacamole/guacd
 Pull guacamole mysql docker with “sudo docker pull mysql
 Create docker container and run it using “sudo docker run -d –name=sqlDocker –env=”MYSQL_ROOT_PASSWORD=xxxxxxxx” mysql”
