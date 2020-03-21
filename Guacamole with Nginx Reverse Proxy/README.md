@@ -1,9 +1,13 @@
 
 **Home Lab - Setting up Guacamole Server with Nginx Reverse Proxy for SSL encryption.**
 
-**Requirements:** Ubuntu 18.04 most recent version or sooner. Really doesn’t matter since we are using dockers.
+**Requirements:**
+* Ubuntu 18.04 most recent version or sooner. The version is not critical since I will be using dockers to deploy both my guacamole and mysql server.
+  -This Ubuntu 18.04 ISO can be downloaded from http://releases.ubuntu.com/18.04.4/. I will be using ESXI to host my ubuntu server.
+* Ability to NAT/port forward services from your firewall or router (I am using pfsense as my firewall/router)
 
-Install docker with command “sudo apt install docker.io”
+
+1. Install docker with command “sudo apt install docker.io”
 
 pull guacamole guacd docker with “sudo docker pull guacamole/guacd”
 
