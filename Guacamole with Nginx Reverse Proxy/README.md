@@ -57,11 +57,19 @@ Next  we have to set up the guacamole_db structure. We ill import the initdb.sql
 ```
 mysql -u root -p -h 172.17.0.2 guacamole_db < initdb.sql
 ```
-Log back into sql server and type in “use guacamole_db” to access the database. Create a user for the guacamole server using the following command. (NOTE: _guacadmin_ is the username you want to create for the guacamole service, and _password_ is the password you want to assign to the user. The _%_  is used to allow the guacamole account to login from any host.
+Log back into sql server via mysql-client and type in “use guacamole_db” to access the guacamole database. Create a user for the guacamole server using the following command. (NOTE: _guacadmin_ is the username you want to create for the guacamole service, and _password_ is the password you want to assign to the user. The _%_  is used to allow the guacamole account to login from any host.
 ```
 $ create user ‘guacadmin’@’%’ identified by ‘password’; 
 ```
-
-“Grant all privileges on guacamole_db.* to ‘guacadmin’@’localhost’;”
-Type in “select host, user from mysql.user;” to verify the user guacadmin as been created.
-Type in “show grants for ‘guacadmin’@’localhost’; “ to verify all privileges for guaccadmin_db have been granted to the guacadmin user
+Next, grant all privledges to the guacamole account to the guacamole database.
+```
+$ Grant all privileges on guacamole_db.* to ‘guacadmin’@’localhost’;
+```
+You can type in the following commands to verify the guacamole service account has been created and granted the appropriate privledges.
+```
+select host, user from mysql.user;” 
+```
+```
+show grants for ‘guacadmin’@’localhost’; 
+```
+You should now be able to access your guacamole web application opening a web browser and going to http://localhost:8080/guacamole/.
