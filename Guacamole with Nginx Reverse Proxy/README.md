@@ -73,7 +73,7 @@ $ select host, user from mysql.user;”
 ```
 $ show grants for ‘guacadmin’@’localhost’; 
 ```
-Set up the guacamole/guacamole container and link the mysql container, guacd containter, and guacamole database to their corresponding services
+Exit out of your mysql server command line interface. Set up the guacamole/guacamole container and link the mysql container, guacd containter, and guacamole database to their corresponding services
 ```
 $ docker run --name guacamoleDocker 
   --link guacd-name:guacd 
