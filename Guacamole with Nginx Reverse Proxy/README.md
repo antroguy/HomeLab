@@ -1,7 +1,7 @@
 
-**Home Lab - Setting up Guacamole Server**
+# Home Lab - Setting up Guacamole Server
 The purpose of this guide is to provide instructional value on how to deploy a Guacamole server as a jump server for a home network.
-This guide will provide instrucction on how to deploy a guacamole server and mysql server using docker instances, how to set up SSL encryption for the guac server using nginx as a reverse proxy, and how to generate an SSL certificate through letsencrypt.
+This guide will provide instruction on how to deploy a guacamole server and mysql server using docker instances, and how to set up https for the guac server using nginx as a reverse proxy.
 
 **Requirements:**
 * Ubuntu 18.04 most recent version or sooner. The version is not critical since I will be using dockers to deploy both my guacamole and mysql server.
@@ -9,6 +9,7 @@ This guide will provide instrucction on how to deploy a guacamole server and mys
 * Ability to NAT/port forward services from your router (I am using pfsense as my firewall)
 * Ownership of a domain (I purchased my domain through google domains)
 
+### STEP 1: Setting up Guacamole server using docker containers
 On your Ubuntu server install the docker tool.
 ```
 $ sudo apt install docker.io”
@@ -84,3 +85,5 @@ $ docker run --name guacamoleDocker
   -d -p 8080:8080 guacamole/guacamole
 ```
 You should now be able to access your guacamole web application by opening a web browser and going to http://localhost:8080/guacamole/.
+
+### STEP 2: Setting up HTTPS using Nginx
