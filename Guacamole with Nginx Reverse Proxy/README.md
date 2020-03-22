@@ -34,15 +34,15 @@ $ docker run –rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --mysql > in
 ```
 Start the mysql container (NOTE: _sql-name_ is the name you will assign the sql container, and _mypassword_ is the root password for mysql)
 ```
-sudo docker run -d –name=sql-name –env=”MYSQL_ROOT_PASSWORD=mypassword” mysql
+$ sudo docker run -d –name=sql-name –env=”MYSQL_ROOT_PASSWORD=mypassword” mysql
 ```
 Download mysql-client in order to connect to the mysql database.
 ```
-sudo apt install mysql-client
+$ sudo apt install mysql-client
 ```
 Inspect the mysql container, and take note of the ip address. 
 ```
-sudo docker inspect sql-name
+$ sudo docker inspect sql-name
 ```
 Connect to the mysql server using the IP address identified in the previous step.
 ```
@@ -55,7 +55,7 @@ $ create database guacamole_db
 If you type “show databases”  you should see the guacamole database created. Exit the mysql server. 
 Next  we have to set up the guacamole_db structure. We ill import the initdb.sql file that we created previously into the guacamole_db. 
 ```
-mysql -u root -p -h 172.17.0.2 guacamole_db < initdb.sql
+$ mysql -u root -p -h 172.17.0.2 guacamole_db < initdb.sql
 ```
 Log back into sql server via mysql-client and type in “use guacamole_db” to access the guacamole database. Create a user for the guacamole server using the following command. (NOTE: _guacadmin_ is the username you want to create for the guacamole service, and _password_ is the password you want to assign to the user. The _%_  is used to allow the guacamole account to login from any host, the field can changed to localhost or a static ip address instead.)
 ```
@@ -67,14 +67,14 @@ $ Grant all privileges on guacamole_db.* to ‘guacadmin’@’localhost’;
 ```
 You can type in the following commands to verify the guacamole service account has been created and granted the appropriate privledges.
 ```
-select host, user from mysql.user;” 
+$ select host, user from mysql.user;” 
 ```
 ```
-show grants for ‘guacadmin’@’localhost’; 
+$ show grants for ‘guacadmin’@’localhost’; 
 ```
 Set up the guacamole/guacamole container and link the mysql container, guacd containter, and guacamole database to their corresponding services
 ```
-docker run --name guacamoleDocker 
+$ docker run --name guacamoleDocker 
   --link guacd-name:guacd 
   --link sql-name:mysql 
   -e MYSQL_DATABASE=guacamole_db 
