@@ -9,13 +9,20 @@ This guide will provide instrucction on how to deploy a guacamole server and mys
 * Ability to NAT/port forward services from your router (I am using pfsense as my firewall)
 * Ownership of a domain (I purchased my domain through google domains)
 
-1. On your Ubuntu server install the docker application.
+1. On your Ubuntu server install the docker tool.
 ```
 $ sudo apt install docker.io”
 ```
-pull guacamole guacd docker with “sudo docker pull guacamole/guacd”
-
-pull guacamole docker with “sudo docker pull guacamole/guacamole”
+2. Pull the guacamole/guacd, guacamole/guacamole, and mysql docker containers.
+```
+$ sudo docker pull guacamole/guacd
+```
+```
+$ sudo docker pull guacamole/guacamole
+```
+```
+$ sudo docker pull mysql
+```
 
 grab mysql database structure with a. “docker run –rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --mysql > initdb.sql
 
