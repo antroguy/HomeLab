@@ -88,3 +88,7 @@ You should now be able to access your guacamole web application by opening a web
 
 ### STEP 2: Setting up HTTPS using Nginx
 Before setting up your Nginx server you will need to set up your publicly accessible domain name. I purchased a domain through google domains at https://domains.google.com. Once you purchase your domain you will need to create an A record that points to your public IP address.
+```
+![alt text](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/googleDomain.PNG)
+
+```
