@@ -87,3 +87,4 @@ $ docker run --name guacamoleDocker
 You should now be able to access your guacamole web application by opening a web browser and going to http://localhost:8080/guacamole/.
 
 ### STEP 2: Setting up HTTPS using Nginx
+Before setting up your Nginx server you will need to set up your publicly accessible domain name. I purchased a domain through google domains at https://domains.google.com. Once you purchase your domain you will need to create an A record that points to your public IP address.
