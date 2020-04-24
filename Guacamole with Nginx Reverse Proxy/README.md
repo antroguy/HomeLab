@@ -93,7 +93,7 @@ Before setting up your Nginx server you will need to set up your publicly access
 
 Next you will need to create a NAT rule on your firewall/router to port forward all http and https traffic to your guacamole servers private IP address. I am using Pfsense as my firewall. From pfsense you will need to go to Firewall -> NAT to create youre NAT rule. 
 
-![alt text](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/pfSenseNAT.PNG)
+![alt text](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/pfSenseNAT.png)
 
 You will also need to create a firewall rule to allow http and https traffic inbound to your guacamoles internal IP address.
 
