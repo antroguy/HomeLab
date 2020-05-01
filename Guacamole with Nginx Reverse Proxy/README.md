@@ -98,3 +98,32 @@ Next you will need to create a NAT rule on your firewall/router to port forward 
 You will also need to create a firewall rule to allow http and https traffic inbound to your guacamoles internal IP address.
 
 ![alt text](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/pfsenseRule.PNG)
+
+Now it is time to setup SSL over HTTPS using Nginx as a reverse proxy for our guacamole server. First you will need to install nginx. Run the following command:
+```
+$ Sudo apt install nginx
+```
+Next go to the directory /etc/nginx/sites-available/ and make a copy of the default configuration file, naming it something like guacamoleProxy (For identification purposes)
+```
+$ Sudo cp default guacamoleProxy
+```
+Edit the guacamoleProxy config file. You will need to initially set it up to act as a reverse proxy for HTTP traffic over port 80. You can use my default file as an example.
+
+![alt text](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/nginxConfig.PNG)
+
+Go into the directory /etc/nginx/sites-enabled/ and create a symbolic link to guacamoleProxy configuration file you just created.
+
+```
+ln -s /etc/nginx/sites-available/guacamoleProxy /etc/nginx/sites-enabled/guacamoleProxy
+```
+If you browse to http://localhost/ from your web browse it should redirect to your guacamole server. (Instead of browsing to http://localhost:8080/guacamole/#/)
+
+Next we will setup HTTPS for our nginx server, and have it redirect all traffic over port 443 to our guacamole server. We will use LetsEncrypt to generate a free SSL certificate. First install certbot for nginx on your guac host. 
+```
+$ Sudo apt-get install python-certbot-nginx -y
+```
+Run certbot to generate your SSL certificate and configure HTTPS for your nginx server. 
+```
+$ Sudo certbot --nginx
+```
+Follow the script prompts as necessary. 
