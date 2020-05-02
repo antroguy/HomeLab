@@ -1,5 +1,5 @@
 
-# Setting up your Guacamole Server
+# Guacamole Server with Docker
 _Disclaimer: Everything I do is through self research and should be taken "as is". I take no credit for the information in this writeup, as most of it was taken from other resources and modified to my own needs. Everything was tested and worked on my own test environment, modification may be needed for utilizing different hardware and software._
 
 The purpose of this guide is to provide instructional value on how to deploy a Guacamole server as a jump server for a home network.
