@@ -107,7 +107,7 @@ Next go to the directory /etc/nginx/sites-available/ and make a copy of the defa
 ```
 $ Sudo cp default guacamoleProxy
 ```
-Edit the guacamoleProxy config file. You will need to initially set it up to act as a reverse proxy for HTTP traffic over port 80. You can use my default file as an example.
+Edit the guacamoleProxy config file. You will need to initially set it up to act as a reverse proxy for HTTP traffic over port 80. You can use my default file as an example. (NOTE: _server_name_ is the sub domain name you created previously on your google domain)
 
 ![alt text](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/nginxConfig.PNG)
 
@@ -120,10 +120,10 @@ If you browse to http://localhost/ from your web browse it should redirect to yo
 
 Next we will setup HTTPS for our nginx server, and have it redirect all traffic over port 443 to our guacamole server. We will use LetsEncrypt to generate a free SSL certificate. First install certbot for nginx on your guac host. 
 ```
-$ Sudo apt-get install python-certbot-nginx -y
+$ Sudo apt-get install python-certbot-nginx
 ```
 Run certbot to generate your SSL certificate and configure HTTPS for your nginx server. 
 ```
 $ Sudo certbot --nginx
 ```
-Follow the script prompts as necessary. 
+Follow the prompt as directed. Once complete you should be able your guacamole server via HTTPS through your sub domain name (e.g. https://guacamoleserver.domain.com
