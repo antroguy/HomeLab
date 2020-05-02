@@ -114,7 +114,7 @@ Edit the guacamoleProxy config file. You will need to initially set it up to act
 Go into the directory /etc/nginx/sites-enabled/ and create a symbolic link to guacamoleProxy configuration file you just created.
 
 ```
-ln -s /etc/nginx/sites-available/guacamoleProxy /etc/nginx/sites-enabled/guacamoleProxy
+$ ln -s /etc/nginx/sites-available/guacamoleProxy /etc/nginx/sites-enabled/guacamoleProxy
 ```
 If you browse to http://localhost/ from your web browse it should redirect to your guacamole server. (Instead of browsing to http://localhost:8080/guacamole/#/)
 
