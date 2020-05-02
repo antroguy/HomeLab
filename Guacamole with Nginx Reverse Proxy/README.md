@@ -87,7 +87,7 @@ $ docker run --name guacamoleDocker
 You should now be able to access your guacamole web application by opening a web browser and going to http://localhost:8080/guacamole/.
 
 ### STEP 2: Setting up HTTPS using Nginx
-Before setting up your Nginx server you will need to set up your publicly accessible domain name. I purchased a domain through google domains at https://domains.google.com. Once you purchase your domain you will need to create an A record that points to your public IP address.
+Before setting up your Nginx server you will need to set up your publicly accessible domain name. I purchased a domain through google domains at https://domains.google.com. Once you purchase your domain you will need to create an 'A' record that points to your public IP address. (For this writeup, our 'A' record Name will be "guacamoleServer")
 
 ![alt text](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/googleDomain.PNG)
 
@@ -107,7 +107,7 @@ Next go to the directory /etc/nginx/sites-available/ and make a copy of the defa
 ```
 $ Sudo cp default guacamoleProxy
 ```
-Edit the guacamoleProxy config file. You will need to initially set it up to act as a reverse proxy for HTTP traffic over port 80. You can use my default file as an example. (NOTE: _server_name_ is the sub domain name you created previously on your google domain)
+Edit the guacamoleProxy config file. You will need to initially set it up to act as a reverse proxy for HTTP traffic over port 80. You can use my default file as an example. (NOTE: _server_name_ is your domain name with the 'A' record that was created previously)
 
 ![alt text](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/nginxConfig.PNG)
 
@@ -126,4 +126,4 @@ Run certbot to generate your SSL certificate and configure HTTPS for your nginx 
 ```
 $ Sudo certbot --nginx
 ```
-Follow the prompt as directed. Once complete you should be able your guacamole server via HTTPS through your sub domain name (e.g. https://guacamoleserver.domain.com
+Follow the prompt as directed. Once complete you should be able to access your guacamole server via HTTPS through your domain name (e.g. https://guacamoleserver.domain.com)
