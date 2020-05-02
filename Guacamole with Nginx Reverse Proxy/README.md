@@ -131,3 +131,9 @@ $ Sudo certbot --nginx
 Follow the prompt as directed. Once complete you should be able to access your guacamole server via HTTPS through your domain name (e.g. https://guacamoleserver.domain.com)
 
 Now you can log into the guacamole server using the default creds and establish RDP and SSH connections as you see fit. 
+
+_Resources:_
+* _https://outpost.dnsmeister.nl/articles/setting-guacamole-mysql-docker-xubuntu_
+* _https://linuxize.com/post/how-to-create-mysql-user-accounts-and-grant-privileges/_
+* _https://alvinalexander.com/blog/post/mysql/show-users-i-ve-created-in-mysql-database/_
+* _https://guacamole.apache.org/doc/gug/guacamole-docker.html_
