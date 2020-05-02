@@ -1,5 +1,7 @@
 
 # Setting up your Guacamole Server
+_Disclaimer: Everything I do is through self research and should be taken "as is". I take no credit for the information in this writeup, as most of it was taken from other resources and modified to my own needs. Everything was tested and worked on my own test environment, modification may be needed for utilizing different hardware and software._
+
 The purpose of this guide is to provide instructional value on how to deploy a Guacamole server as a jump server for a home network.
 This guide will provide instruction on how to deploy a guacamole server and mysql server using docker instances, and how to set up https for the guac server using nginx as a reverse proxy.
 
@@ -127,3 +129,5 @@ Run certbot to generate your SSL certificate and configure HTTPS for your nginx 
 $ Sudo certbot --nginx
 ```
 Follow the prompt as directed. Once complete you should be able to access your guacamole server via HTTPS through your domain name (e.g. https://guacamoleserver.domain.com)
+
+Now you can log into the guacamole server using the default creds and establish RDP and SSH connections as you see fit. 
