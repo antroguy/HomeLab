@@ -63,9 +63,9 @@ Inspect the mysql container, and take note of the ip address.
 $ sudo docker inspect sql-name
 ```
 
-[![alt text](https://github.com/antroguy/HomeLab/raw/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/mysqlNetwork_inspect.PNG)](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/mysqlNetwork_inspect.PNG) 
+[![alt text](https://github.com/antroguy/HomeLab/raw/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/mysqlNetwork_inspect.PNG)](https://github.com/antroguy/HomeLab/blob/master/Guacamole%20with%20Nginx%20Reverse%20Proxy/Images/mysqlNetwork_inspect.PNG)
 
-Connect to the mysql server using the IP address identified in the previous step.
+ Connect to the mysql server using the IP address identified in the previous step.
 
 ```text
 $ mysql -u root -p -h 172.15.0.2
